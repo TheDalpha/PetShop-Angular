@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Oliver.PetShop.Core.Entity\Oliver.PetShop.Core.Entity.csproj" />
+    <ProjectReference Include="..\Oliver.PetShop.Core\Oliver.PetShop.Core.csproj" />
+  </ItemGroup>
+
+</Project>
