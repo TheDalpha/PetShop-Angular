@@ -36,17 +36,17 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
 
         // POST api/pet
         [HttpPost]
-        public void Post([FromBody] Pet pet)
+        public ActionResult<Pet> Post([FromBody] Pet pet)
         {
             
-            _petService.AddPet(pet);
+           return _petService.AddPet(pet);
         }
 
         // PUT api/pet/5
         [HttpPut("{id}")]
-        public ActionResult<Pet> Put(int id, [FromBody] Pet pet)
+        public void Put([FromBody] Pet pet)
         {
-           return _petService.UpdatePet(id, pet);
+           _petService.UpdatePet(pet);
         }
 
         // DELETE api/pet/5

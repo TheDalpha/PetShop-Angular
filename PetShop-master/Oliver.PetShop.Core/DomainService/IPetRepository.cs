@@ -9,12 +9,12 @@ namespace Oliver.PetShop.Core.DomainService
     {
         IEnumerable<Pet> ReadPets();
 
-        void DeletePet(int id);
+        Pet DeletePet(int id);
 
         Pet CreatePet(Pet pet);
 
         Pet ReadById(int id);
 
-        //List<Pet> Search(string type);
+        void UpdatePet(Pet pet);
     }
 }

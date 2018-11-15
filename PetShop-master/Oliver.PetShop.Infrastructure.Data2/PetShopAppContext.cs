@@ -16,5 +16,12 @@ namespace Oliver.PetShop.Infrastructure.Data2
 
         public DbSet<Pet> Pets { get; set; }
         public DbSet<Owner> Owners { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Pet>().HasOne(p => p.PreviousOwner);
+
+            modelBuilder.Entity<Owner>().HasMany(k => k.AllPets);
+        }
     }
 }

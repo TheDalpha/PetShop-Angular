@@ -8,7 +8,7 @@ namespace Oliver.PetShop.Core.DomainService
     {
         IEnumerable<Owner> ReadOwners();
 
-        void DeleteOwner(int id);
+        Owner DeleteOwner(int id);
 
         Owner CreateOwner(Owner owner);
 

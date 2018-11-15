@@ -21,9 +21,9 @@ namespace Oliver.PetShop.Core.ApplicationService.impl
             return _ownerRepository.CreateOwner(owner);
         }
 
-        public void DeleteOwner(int id)
+        public Owner DeleteOwner(int id)
         {
-            _ownerRepository.DeleteOwner(id);
+            return _ownerRepository.DeleteOwner(id);
         }
 
         public Owner GetInstance()

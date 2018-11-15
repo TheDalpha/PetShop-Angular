@@ -23,9 +23,11 @@ namespace Oliver.PetShop.Infrastructure.Data2.Repositories
             return own;
         }
 
-        public void DeleteOwner(int id)
+        public Owner DeleteOwner(int id)
         {
-            throw new NotImplementedException();
+            var removedOwner = _ctx.Remove(new Owner { Id = id }).Entity;
+            _ctx.SaveChanges();
+            return removedOwner;
         }
 
         public Owner ReadById(int id)

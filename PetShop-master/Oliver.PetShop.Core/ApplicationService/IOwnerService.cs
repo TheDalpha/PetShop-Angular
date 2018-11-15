@@ -8,7 +8,7 @@ namespace Oliver.PetShop.Core.ApplicationService
     {
         List<Owner> GetOwners();
 
-        void DeleteOwner(int id);
+        Owner DeleteOwner(int id);
 
         Owner AddOwner(Owner owner);
 

@@ -20,12 +20,7 @@ namespace Oliver.PetShop.Core.ApplicationService.impl
 
         public List<Pet> GetPets()
         {
-            var listPets = _petRepo.ReadPets().ToList();
-            foreach (var pet in listPets)
-            {
-                pet.PreviousOwner = _ownerRepo.ReadById(pet.PreviousOwner.Id);
-            }
-            return listPets;
+            return _petRepo.ReadPets().ToList();
         }
 
         public void DeletePet(int id)
@@ -64,24 +59,9 @@ namespace Oliver.PetShop.Core.ApplicationService.impl
             return _petRepo.ReadPets().OrderBy(pet => pet.Price).ToList();
         }
 
-        public Pet UpdatePet(int id, Pet pet)
+        public void UpdatePet(Pet pet)
         {
-            var oldPet = ReadById(id);
-            if (pet.Name != null)
-            {
-                oldPet.Name = pet.Name;
-            }
-            if (pet.Type != null)
-            {
-                oldPet.Type = pet.Type;
-            }
-            if (pet.Color != null)
-            {
-                oldPet.Color = pet.Color;
-            }
-            oldPet.Price = pet.Price;
-
-            return oldPet;
+            _petRepo.UpdatePet(pet);
         }
     }
 }

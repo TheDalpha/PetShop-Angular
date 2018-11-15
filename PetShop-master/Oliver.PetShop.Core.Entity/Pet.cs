@@ -20,10 +20,6 @@ namespace Oliver.PetShop.Core.Entity
 
         public string Type { get; set; }
 
-        public DateTime Birthday { get; set; }
-
-        public DateTime SoldDate { get; set; }
-
         public string Color { get; set; }
 
         public Owner PreviousOwner { get; set; }

@@ -23,6 +23,6 @@ namespace Oliver.PetShop.Core.ApplicationService
 
         List<Pet> SortByPrice();
 
-        Pet UpdatePet(int id, Pet pet);
+        void UpdatePet(Pet pet);
     }
 }

@@ -17,15 +17,17 @@ namespace Oliver.PetShop.Infrastructure.Data2.Repositories
         }
 
         public Pet CreatePet(Pet pet)
-        {C:\Users\ollie\Documents\GitHub\Webshop-Table\Group13.Webshop.Infrastructure.Data\Repositories\
+        {
             var pets = _ctx.Pets.Add(pet).Entity;
             _ctx.SaveChanges();
             return pets;
         }
 
-        public void DeletePet(int id)
+        public Pet DeletePet(int id)
         {
-            throw new NotImplementedException();
+            var removedPet = _ctx.Remove(new Pet { Id = id }).Entity;
+            _ctx.SaveChanges();
+            return removedPet;
         }
 
         public Pet ReadById(int id)
@@ -36,6 +38,12 @@ namespace Oliver.PetShop.Infrastructure.Data2.Repositories
         public IEnumerable<Pet> ReadPets()
         {
             return _ctx.Pets;
+        }
+
+        public void UpdatePet(Pet pet)
+        {
+            _ctx.Update(pet);
+            _ctx.SaveChanges();
         }
     }
 }

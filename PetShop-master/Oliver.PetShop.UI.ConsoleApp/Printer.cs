@@ -212,7 +212,7 @@ namespace Oliver.PetShop.UI.ConsoleApp
             foreach (var pet in listPets)
             {
                 Console.WriteLine("Id: {0}\nName: {1}\nType: {2}\nBirthday: {3}\nSold Date: {4}\nColor: {5}\nPrevious Owner: {6}\nPrice: {7:N}\n",
-                    pet.Id, pet.Name, pet.Type, pet.Birthday, pet.SoldDate, pet.Color, pet.PreviousOwner, pet.Price);
+                    pet.Id, pet.Name, pet.Type, pet.Color, pet.PreviousOwner, pet.Price);
             }
             }
         }

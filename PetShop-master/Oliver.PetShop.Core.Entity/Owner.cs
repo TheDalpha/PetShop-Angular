@@ -20,6 +20,6 @@ namespace Oliver.PetShop.Core
 
         public string Name { get; set; }
 
-        public Pet Pet { get; set; }
+        public List<Pet> AllPets { get; set; }
     }
 }
