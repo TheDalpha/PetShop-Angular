@@ -37,9 +37,9 @@ export class CustomerService {
     this.customers[index] = customer;
   }
 
-  deleteCustomer(id: number) {
-    this.http.delete(environment.apiUrl + '/api/pet/' + id);
-    // this.customers = this.customers.filter(cust => cust.id !== id);
+  deleteCustomer(id: number): Observable<any> {
+    return this.http.delete(environment.apiUrl + '/api/pet/' + id);
+    //this.customers = this.customers.filter(cust => cust.id !== id);
   }
 
   getCustomerById(id: number) {

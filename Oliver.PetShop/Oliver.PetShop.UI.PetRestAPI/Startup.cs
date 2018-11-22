@@ -129,7 +129,7 @@ namespace Oliver.PetShop.UI.PetRestAPI
                         new User
                         {
                             Id = 2,
-                        Username = "UserOle",
+                        Username = "AdminOle",
                         PasswordHash = passwordHashOle,
                         PasswordSalt = passwordSaltOle,
                         IsAdmin = true

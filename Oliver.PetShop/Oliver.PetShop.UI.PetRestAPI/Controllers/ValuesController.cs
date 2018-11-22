@@ -30,7 +30,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // GET api/pet/5
-        [Authorize(Roles = "Administator")]
+        [Authorize(Roles = "Administrator")]
         [HttpGet("{id}")]
         public ActionResult<Pet> Get(int id)
         {
@@ -38,7 +38,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // POST api/pet
-        [Authorize(Roles = "Administator")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public ActionResult<Pet> Post([FromBody] Pet pet)
         {
@@ -47,7 +47,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // PUT api/pet/5
-        [Authorize(Roles = "Administator")]
+        [Authorize(Roles = "Administrator")]
         [HttpPut("{id}")]
         public void Put([FromBody] Pet pet)
         {
@@ -55,7 +55,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // DELETE api/pet/5
-        [Authorize(Roles = "Administator")]
+        [Authorize(Roles = "Administrator")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
