@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Oliver.PetShop.Core.ApplicationService;
 using Oliver.PetShop.Core.Entity;
@@ -21,6 +22,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // GET: api/Owner
+        [Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<Owner>> Get()
         {
@@ -28,6 +30,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // GET: api/Owner/5
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}", Name = "Get")]
         public ActionResult<Owner> Get(int id)
         {
@@ -35,6 +38,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // POST: api/Owner
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public void Post([FromBody] Owner owner)
         {
@@ -42,6 +46,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // PUT: api/Owner/5
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public ActionResult<Owner> Put(int id, [FromBody] Owner owner)
         {
@@ -49,6 +54,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

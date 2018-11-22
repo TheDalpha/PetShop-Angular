@@ -72,7 +72,7 @@ namespace Oliver.PetShop.UI.PetRestAPI.Controllers
             };
 
             if (user.IsAdmin)
-                claims.Add(new Claim(ClaimTypes.Role, "Administrator"));
+                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
 
             var token = new JwtSecurityToken(
                 new JwtHeader(new SigningCredentials(

@@ -50,7 +50,12 @@ namespace Oliver.PetShop.UI.PetRestAPI
                 };
             });
 
-            services.AddCors();
+            services.AddCors(options =>
+            options.AddPolicy("AllowSpecificOrigin",
+                builder => builder
+                .WithOrigins("http://localhost:52154").AllowAnyHeader().AllowAnyMethod()
+                .WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()
+                ));
 
             services.AddDbContext<PetShopAppContext>(opt => opt.UseInMemoryDatabase("PetShop9876"));
 
@@ -84,37 +89,37 @@ namespace Oliver.PetShop.UI.PetRestAPI
                     CreatePasswordHash(password, out passwordHashJoe, out passwordSaltJoe);
                     CreatePasswordHash(password, out passwordHashOle, out passwordSaltOle);
 
-                    var owner1 = ctx.Owners.Add(new Owner()
-                    {
-                        Id = 1,
-                        Name = "Børge"
-                    }).Entity;
+                    //var owner1 = ctx.Owners.Add(new Owner()
+                    //{
+                    //    Id = 1,
+                    //    Name = "Børge"
+                    //}).Entity;
 
-                    var owner2 = ctx.Owners.Add(new Owner()
-                    {
-                        Id = 2,
-                        Name = "Hans"
-                    }).Entity;
+                    //var owner2 = ctx.Owners.Add(new Owner()
+                    //{
+                    //    Id = 2,
+                    //    Name = "Hans"
+                    //}).Entity;
 
-                    var pet1 = ctx.Pets.Add(new Pet()
-                    {
-                        Id = 1,
-                        Name = "Jens",
-                        Type = "Hund",
-                        Color = "Blå",
-                        PreviousOwner = owner1,
-                        Price = 456
-                    }).Entity;
+                    //var pet1 = ctx.Pets.Add(new Pet()
+                    //{
+                    //    Id = 1,
+                    //    Name = "Jens",
+                    //    Type = "Hund",
+                    //    Color = "Blå",
+                    //    PreviousOwner = owner1,
+                    //    Price = 456
+                    //}).Entity;
 
-                    var pet2 = ctx.Pets.Add(new Pet()
-                    {
-                        Id = 2,
-                        Name = "Ole",
-                        Type = "Kat",
-                        Color = "Rød",
-                        PreviousOwner = owner2,
-                        Price = 489
-                    });
+                    //var pet2 = ctx.Pets.Add(new Pet()
+                    //{
+                    //    Id = 2,
+                    //    Name = "Ole",
+                    //    Type = "Kat",
+                    //    Color = "Rød",
+                    //    PreviousOwner = owner2,
+                    //    Price = 489
+                    //});
 
                     List<User> users = new List<User>
                     {

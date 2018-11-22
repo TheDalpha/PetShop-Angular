@@ -26,23 +26,29 @@ export class CustomerService {
     return this.http.get<Pet[]>(environment.apiUrl + '/api/pet/', httpOptions);
   }
 
-  addCustomer(customer: Pet) {
-    customer.id = this.id++;
-  this.customers.push(customer);
+  addCustomer(customer: Pet): Observable<Pet> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+  return this.http.post<Pet>(environment.apiUrl + '/api/pet/', customer, httpOptions);
   }
 
-  updateCustomer(customer: Pet) {
-    const custToUpdate = this.customers.find(cust => customer.id === cust.id);
-    const index = this.customers.indexOf(custToUpdate);
-    this.customers[index] = customer;
+  updateCustomer(customer: Pet): Observable<Pet> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.put<Pet>(environment.apiUrl + '/api/pet/' + customer.id, customer, httpOptions);
   }
 
   deleteCustomer(id: number): Observable<any> {
-    return this.http.delete(environment.apiUrl + '/api/pet/' + id);
-    //this.customers = this.customers.filter(cust => cust.id !== id);
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.delete(environment.apiUrl + '/api/pet/' + id, httpOptions);
+    // this.customers = this.customers.filter(cust => cust.id !== id);
   }
 
-  getCustomerById(id: number) {
-    return this.customers.find(cust => cust.id === id);
+  getCustomerById(id: number): Observable<Pet> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get<Pet>(environment.apiUrl + '/api/pet/' + id, httpOptions);
+    // return this.customers.find(cust => cust.id === id);
   }
 }
