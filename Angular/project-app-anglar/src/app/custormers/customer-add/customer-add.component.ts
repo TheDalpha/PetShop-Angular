@@ -11,9 +11,10 @@ import {Router} from '@angular/router';
 export class CustomerAddComponent implements OnInit {
 
   customerForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    address: new FormControl('')
+    name: new FormControl(''),
+    type: new FormControl(''),
+    color: new FormControl(''),
+    price: new FormControl('')
   });
 
   constructor(private customerService: CustomerService,

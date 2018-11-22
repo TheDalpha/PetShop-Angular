@@ -11,9 +11,11 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class CustomerUpdateComponent implements OnInit {
   id: number;
   customerForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    address: new FormControl('')
+    name: new FormControl(''),
+    type: new FormControl(''),
+    color: new FormControl(''),
+    previousOwner: new FormControl(''),
+    price: new FormControl('')
   });
   constructor(private route: ActivatedRoute,
               private customerService: CustomerService,
@@ -23,9 +25,10 @@ export class CustomerUpdateComponent implements OnInit {
     this.id = +this.route.snapshot.paramMap.get('id');
     const customer = this.customerService.getCustomerById(this.id);
     this.customerForm.patchValue({
-      firstName: customer.firstName,
-      lastName: customer.lastName,
-      address: customer.address
+      name: customer.name,
+      type: customer.type,
+      color: customer.color,
+      price: customer.price
     });
   }
 
@@ -35,8 +38,8 @@ export class CustomerUpdateComponent implements OnInit {
     const customer = this.customerForm.value;
     customer.id = this.id;
     this.customerService.updateCustomer( customer );
-    /*this.customerForm.reset();
-    this.router.navigateByUrl('/customers');*/
+    this.customerForm.reset();
+    this.router.navigateByUrl('/customers');
   }
 
 }

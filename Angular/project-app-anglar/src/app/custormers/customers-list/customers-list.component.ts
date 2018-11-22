@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Customer} from '../../shared/models/customer';
+import {Pet} from '../../shared/models/pet';
 import {CustomerService} from '../../shared/services/customer.service';
 
 @Component({
@@ -8,17 +8,20 @@ import {CustomerService} from '../../shared/services/customer.service';
   styleUrls: ['./customers-list.component.css']
 })
 export class CustomersListComponent implements OnInit {
-  customers: Customer[];
+  customers: Pet[];
 
 
   constructor(private customerService: CustomerService) { }
+
   ngOnInit() {
-    this.customers = this.customerService.getCustomers();
+    this.customerService.getCustomers().subscribe(petList => {
+      this.customers = petList;
+    });
   }
 
   delete(id: number) {
     this.customerService.deleteCustomer(id);
-    this.customers = this.customerService.getCustomers();
+    // this.customers = this.customerService.getCustomers();
   }
 
 

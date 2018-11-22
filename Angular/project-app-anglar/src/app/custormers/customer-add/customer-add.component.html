@@ -3,18 +3,23 @@
 <form [formGroup]="customerForm" (ngSubmit)="save()">
 
   <label>
-    First Name:
-    <input type="text" formControlName="firstName">
+    Name:
+    <input type="text" formControlName="name">
   </label>
 
   <label>
-    Last Name:
-    <input type="text" formControlName="lastName">
+    Type:
+    <input type="text" formControlName="type">
   </label>
 
   <label>
-    Address:
-    <input type="text" formControlName="address">
+    Color:
+    <input type="text" formControlName="color">
+  </label>
+
+  <label>
+    Price:
+    <input type="number" formControlName="price">
   </label>
 
   <button type="submit">Save</button>

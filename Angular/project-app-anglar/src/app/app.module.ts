@@ -8,8 +8,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomerDetailsComponent } from './custormers/customer-details/customer-details.component';
 import { CustomerAddComponent } from './custormers/customer-add/customer-add.component';
-import {ReactiveFormsModule} from '@angular/forms';
 import { CustomerUpdateComponent} from './custormers/customer-update/customer-update.component';
+import {HttpClientModule} from '@angular/common/http';
+import {LoginComponent} from './custormers/customer-login/customer-login.component';
+import {AuthenticationService} from './shared/services/authentication.service';
+import {CustomerService} from './shared/services/customer.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthGuard} from './shared/guard/auth.guard';
+import {HomeComponent} from './shared/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +26,22 @@ import { CustomerUpdateComponent} from './custormers/customer-update/customer-up
     WelcomeComponent,
     CustomerDetailsComponent,
     CustomerAddComponent,
-    CustomerUpdateComponent
+    CustomerUpdateComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService,
+    CustomerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

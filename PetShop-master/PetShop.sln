@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oliver.PetShop.UI.ConsoleAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oliver.PetShop.UI.PetRestAPI", "Oliver.PetShop.UI.PetRestAPI\Oliver.PetShop.UI.PetRestAPI.csproj", "{056B4BAA-C874-4A67-B244-64BF8131BB7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oliver.PetShop.Infrastructure.Data", "Oliver.PetShop.Infrastructure.Data2\Oliver.PetShop.Infrastructure.Data.csproj", "{034CE2B4-105B-4B35-959E-1357DEFC6658}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oliver.PetShop.Infrastructure.Data", "Oliver.PetShop.Infrastructure.Data2\Oliver.PetShop.Infrastructure.Data.csproj", "{034CE2B4-105B-4B35-959E-1357DEFC6658}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oliver.PetShop.UI.PetShopRestAPI", "Oliver.PetShop.UI.PetShopRestAPI\Oliver.PetShop.UI.PetShopRestAPI.csproj", "{4DD99926-DA4A-4FB7-B51D-57082F43D372}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{034CE2B4-105B-4B35-959E-1357DEFC6658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{034CE2B4-105B-4B35-959E-1357DEFC6658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{034CE2B4-105B-4B35-959E-1357DEFC6658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD99926-DA4A-4FB7-B51D-57082F43D372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD99926-DA4A-4FB7-B51D-57082F43D372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD99926-DA4A-4FB7-B51D-57082F43D372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD99926-DA4A-4FB7-B51D-57082F43D372}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{6C7C40A2-7E8E-4AFD-801D-6F30D356EE92} = {811AD683-3807-4469-A78F-DDE1462A5563}
 		{056B4BAA-C874-4A67-B244-64BF8131BB7D} = {811AD683-3807-4469-A78F-DDE1462A5563}
 		{034CE2B4-105B-4B35-959E-1357DEFC6658} = {63DDEC35-3A13-48D3-AF5E-452CD1415764}
+		{4DD99926-DA4A-4FB7-B51D-57082F43D372} = {811AD683-3807-4469-A78F-DDE1462A5563}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6D675ED-9C7D-4208-B01E-18D5090ECF82}

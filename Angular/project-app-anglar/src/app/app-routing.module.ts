@@ -6,13 +6,21 @@ import {CustomersListComponent} from './custormers/customers-list/customers-list
 import {CustomerDetailsComponent} from './custormers/customer-details/customer-details.component';
 import {CustomerAddComponent} from './custormers/customer-add/customer-add.component';
 import {CustomerUpdateComponent} from './custormers/customer-update/customer-update.component';
+import {LoginComponent} from './custormers/customer-login/customer-login.component';
+import {HomeComponent} from './shared/home/home.component';
+import {AuthGuard} from './shared/guard/auth.guard';
 
 const routes: Routes = [
   { path: 'customers', component: CustomersListComponent },
   { path: 'customer-add', component: CustomerAddComponent },
   { path: 'customer-update/:id', component: CustomerUpdateComponent },
-  { path: '', component: WelcomeComponent },
-  { path: 'customers/:id', component: CustomerDetailsComponent }
+  { path: 'welcome', component: WelcomeComponent },
+  { path: 'customers/:id', component: CustomerDetailsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ];
 
 

@@ -2,8 +2,10 @@
 <h1>Customer Details</h1>
 <div *ngIf="customer">
 <h2>{{customer.id}}</h2>
-<h3>{{customer.firstName}} {{customer.lastName}}</h3>
-<h4>{{customer.address}}</h4>
+<h3>{{customer.name}}</h3>
+<h4>{{customer.type}}</h4>
+  <h4>{{customer.color}}</h4>
+  <h4>{{customer.price}}</h4>
 </div>
 <div *ngIf="!customer">
   <h2>Customer not found</h2>

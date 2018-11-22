@@ -19,9 +19,9 @@ namespace Oliver.PetShop.Infrastructure.Data2
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Pet>().HasOne(p => p.PreviousOwner);
+            modelBuilder.Entity<Pet>().HasOne(p => p.PreviousOwner).WithMany(o => o.AllPets).OnDelete(DeleteBehavior.SetNull);
 
-            modelBuilder.Entity<Owner>().HasMany(k => k.AllPets);
+            
         }
     }
 }
